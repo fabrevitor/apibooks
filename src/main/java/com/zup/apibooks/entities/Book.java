@@ -9,17 +9,23 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 public class Book implements Serializable{
 //	ComicId, Título, Preço, Autores, o ISBN e Descrição
 //  Adicionei um ID único padrão e o ID do User de relacionamento
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	//Relacionamento muitos para um
+	// JsonIgnore para ignorar na geração de dados do Jackson o loop de dados.
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;

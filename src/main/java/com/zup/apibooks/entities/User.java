@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class User implements Serializable{
 	//nome, e-mail, CPF e data de nascimento, sendo que e-mail e CPF devem ser únicos.
