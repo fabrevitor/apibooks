@@ -2,15 +2,18 @@ package com.zup.apibooks.entities;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class User implements Serializable{
-
+	//nome, e-mail, CPF e data de nascimento, sendo que e-mail e CPF devem ser únicos.
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -25,6 +28,11 @@ public class User implements Serializable{
 	
 	private LocalDate dateBirth;
 	
+	// Relacionamento um para muitos
+	@OneToMany(mappedBy = "user")
+	private List<Book> books = new ArrayList<>();
+	
+
 	public User() {
 		
 	}
@@ -101,6 +109,10 @@ public class User implements Serializable{
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	public List<Book> getBooks() {
+		return books;
 	}
 	
 	
