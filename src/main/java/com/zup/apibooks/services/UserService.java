@@ -10,9 +10,9 @@ import com.zup.apibooks.entities.User;
 import com.zup.apibooks.repository.UserRepository;
 
 //UserService - Controller - Regras de negócio do controller
-
 @Service
 public class UserService {
+	//Implementa sozinho com essa anotação
 	@Autowired
 	private UserRepository repository;
 	

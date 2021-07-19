@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
+//Anotação para defini que é uma tabela/entidade.
 @Entity
 public class Book implements Serializable{
 //	ComicId, Título, Preço, Autores, o ISBN e Descrição
@@ -19,6 +19,7 @@ public class Book implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 
+	//ID + Identity
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

@@ -18,9 +18,11 @@ import com.zup.apibooks.services.BookService;
 @RequestMapping(value = "/books")
 public class BookResource {
 	
+	//Implementa sozinho com essa anotação
 	@Autowired
 	private BookService service;
 	
+	// Método de listar todos livros
 	@GetMapping
 	public ResponseEntity<List<Book>>findAll(){
 		List<Book> list = service.findAll();

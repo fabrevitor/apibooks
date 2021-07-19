@@ -18,9 +18,11 @@ import com.zup.apibooks.services.UserService;
 @RequestMapping(value = "/users")
 public class UserResource {
 	
+	// Auto implement
 	@Autowired
 	private UserService service;
 	
+	// Método de listar todos usuários
 	@GetMapping
 	public ResponseEntity<List<User>>findAll(){
 		List<User> list = service.findAll();

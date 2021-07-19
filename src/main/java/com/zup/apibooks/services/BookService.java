@@ -10,9 +10,10 @@ import com.zup.apibooks.entities.Book;
 import com.zup.apibooks.repository.BookRepository;
 
 //BookService - Controller - Regras de negócio do controller
-
 @Service
 public class BookService {
+	
+	//Implementa sozinho com essa anotação
 	@Autowired
 	private BookRepository repository;
 	

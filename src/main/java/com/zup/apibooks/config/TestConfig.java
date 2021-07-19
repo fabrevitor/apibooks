@@ -14,11 +14,11 @@ import com.zup.apibooks.repository.BookRepository;
 import com.zup.apibooks.repository.UserRepository;
 
 // Classe de cfg para gerar dados de teste
-
 @Configuration
 @Profile("test")
 public class TestConfig implements CommandLineRunner{
-	
+
+	//Auto implement com o @Autowired
 	@Autowired
 	private UserRepository userRepository;
 	@Autowired
@@ -26,11 +26,9 @@ public class TestConfig implements CommandLineRunner{
 	
 	
 	
-	
+	// Método para criar os dados de teste
 	@Override
 	public void run(String... args) throws Exception {
-		
-		
 		
 		User u1 = new User(null, "João", "joão_fabre@hotmail.com", "999.854.349-12", LocalDate.now());
 		User u2 = new User(null, "Paulo", "paulo_fabre@hotmail.com", "888.854.349-12", LocalDate.now());
